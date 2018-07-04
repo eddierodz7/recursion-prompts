@@ -22,9 +22,11 @@ if(n === 0){
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
+  // if statement to return 0 if array is empty
   if(array.length < 1){
     return 0;
   }
+  // return the sum in a new array
   return array[0] + sum (array.slice(1));
 };
 
@@ -45,10 +47,19 @@ var sum = function(array) {
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+  // if statment to return true is subtraction to n = 0
 if(n === 0){
-  return 0;
+  return true;
+  // if statement to return flase if subtraction to n = 1
+}else if(n === 1){
+  return false;
 }
-
+// if statment to return n and multiply by -1
+if(n < 1){
+  return isEven(n * -1);
+}
+//retrun to check if its even
+  return (isEven(n - 2));
 };
 
 // 5. Sum all integers below a given integer.
