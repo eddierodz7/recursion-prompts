@@ -7,13 +7,15 @@
 // Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5); // 120
 var factorial = function(n) {
+  // if statement to return null if number is less than 0
   if (n < 0){
     return null;
   }
+  //if statement to return 1 once it reaches 0 to statisfy the laws of multiplication anything times 1 is its self
 if(n === 0){
   return 1;
 }
-
+// return the n and invoke the fauntion name and -1
   return n * factorial( n - 1);
 };
 
@@ -28,18 +30,25 @@ var sum = function(array) {
 
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
-var arraySum = function(array) {
-  if(arary ){
-    return -arraySum(Math.abs(arary));
-  }
-  if(array.length < 1){
-    return 0;
-  }
-  return array[0] + arraySum(array.slice(1));
-};
+  var arraySum = function(array) {
+  //write if statement to statisfy if it is an array
+    if(Array.isArray(array[0])){
+      return arraySum(array[0])+ arraySum(array.slice(1));
+    }
+    // write if statement to statisfy if array is empty to return 0
+    if(array.length < 1){
+      return 0;
+    }
+    // return the summation of the nested arrays
+    return array[0] + arraySum(array.slice(1));
+  };
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+if(n === 0){
+  return 0;
+}
+
 };
 
 // 5. Sum all integers below a given integer.
