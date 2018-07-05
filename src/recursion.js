@@ -108,6 +108,16 @@ return newArr;
 // exponent(4,3); // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
+  // if exp = 0 return 1
+if(exp === 0){
+  return 1;
+}
+// if exp is neg then return 1  divided by base and a neg exp
+if(exp < 0){
+  return 1 /exponent(base, -exp);
+}
+//return the base times the number of exp multiplied by base
+return base * exponent(base, exp -1);
 };
 
 // 8. Determine if a number is a power of two.
