@@ -197,8 +197,27 @@ if(x,y < 0){
 
 // 13. Write a function that divides two numbers without using the / operator or
 // Math methods.
-var divide = function(x, y) {
-};
+  var divide = function(x, y) {
+    if (y === 0) {
+      return NaN;
+    }
+    if (x === 0) {
+      return 0;
+    }
+    if (x < 0 && y > 0 && -x < y || x < -y) {
+      return 0;
+    }
+    if (x > 0 && y > 0 && x < y) {
+      return 0;
+    }
+
+
+    if (x > 0 && y > 0) {
+      return 1 + divide(x - y, y);
+    } else {
+      return -1 + divide(x + y, y);
+    }
+  };
 
 // 14. Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
 // integers is the greatest integer that divides both x and y with no remainder.
@@ -206,6 +225,7 @@ var divide = function(x, y) {
 // http://www.cse.wustl.edu/~kjg/cse131/Notes/Recursion/recursion.html
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
 var gcd = function(x, y) {
+
 };
 
 // 15. Write a function that compares each character of two strings and returns true if
