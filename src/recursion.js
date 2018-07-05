@@ -65,19 +65,23 @@ if(n < 1){
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-var sumBelow = function(n) {
-  if(n === 0){
-    return 0;
+  var sumBelow = function(n) {
+    // if statement if number is = 0 to return 0
+    if ( n === 0){
+      return 0;
     }
-    if(n < 0){
-      return sumBelow(n * -1);
-  }
-  return n + sumBelow(n - 1)
-};
+    // if num is neg then return it with a neg
+    if (n < 0){
+      return  (n + 1) + sumBelow(n + 1);
+    }
+    // return n with its absolute value calling on sumBelow
+    return  Math.abs(n - 1) + Math.abs(sumBelow(n -1));
+  };
 
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+
 };
 
 // 7. Compute the exponent of a number.
