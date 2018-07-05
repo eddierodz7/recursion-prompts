@@ -81,6 +81,24 @@ if(n < 1){
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+  //if statement to return [] if inegers are out of range
+if ( x === y - 1 || y === x - 1 || x === y) {
+  return [];
+// if statement to work with neg
+} else if (x > y) {
+
+  var newArr = range(x, y + 1);
+  newArr.push(y + 1);
+  return newArr;
+// push all of the integers into the new Array
+} else {
+
+  newArr = range(x, y - 1);
+  newArr.push(y - 1);
+}
+// return array with integers
+return newArr;
+
 
 };
 
