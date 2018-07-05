@@ -125,10 +125,22 @@ return base * exponent(base, exp -1);
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
-};
+  // if n == 1 then it will return true
+  if (n == 1) {
+             return true;
+             // else if n is not divisavbel by 2 or if it == 0 return false
+         } else if (n % 2 != 0 || n == 0) {
+             return false;
+             // else return n/2 to check if its divisable by 2
+         } else {
+             return powerOfTwo(n / 2);
+         }
+     };
 
 // 9. Write a function that reverses a string.
 var reverse = function(string) {
+
+
 };
 
 // 10. Write a function that determines if a string is a palindrome.
